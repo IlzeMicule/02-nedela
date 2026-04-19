@@ -1,10 +1,33 @@
-vecums = int (input ("Ievadi vecumu: "))
-aplieciba = input ("Vai ir autovadītāja apliecība? (j/n): ")
-ir_aplieciba = aplieciba == "j"
-students = input ("Vai ir students? (j/n): ")
-ir_students = students == "j"
-veterans = input ("Vai ir veterāns? (j/n): ")
-ir_veterans = veterans == "j"
+while True:
+    try:
+        vecums = int (input ("Ievadi vecumu: "))
+        if vecums < 0:
+            print ("Vecums nevar būt negatīvs. Mēģini vēlreiz.")
+            continue
+        break
+    except ValueError:
+        print("Kļūda: Lūdzu, ievadiet skaitli ar cipariem!")
+while True:
+    aplieciba = input ("Vai ir autovadītāja apliecība? (j/n): ").lower().strip()
+    if aplieciba == "j" or aplieciba == "n":
+        ir_aplieciba = aplieciba == "j"
+        break
+    else:
+        print ("Lūdzu, ievadiet tikai 'j' vai 'n'!")
+while True:
+    students = input ("Vai ir students? (j/n): ")
+    if students == "j" or students == "n":
+        ir_students = students == "j"
+        break
+    else:
+        print ("Lūdzu, ievadiet tikai 'j' vai 'n'!")
+while True:
+    veterans = input ("Vai ir veterāns? (j/n): ")
+    if veterans == "j" or veterans == "n":
+        ir_veterans = veterans == "j"
+        break
+    else:
+        print ("Lūdzu, ievadiet tikai 'j' vai 'n'!")
 var_balsot = vecums >= 18
 var_iret = vecums >= 21 and ir_aplieciba
 iemesls = ""
