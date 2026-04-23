@@ -4,12 +4,13 @@ try:
 except (IndexError, ValueError):
     print ("Lūdzu, ievadiet derīgu skaitli!")
     sys.exit()
+rules = {3: "Fizz", 5: "Buzz", 7: "Jazz", 11: "Puzz"}
 for i in range (1, n+1):
-    if i % 3 == 0 and i % 5 == 0:
-        print ("FizzBuzz")
-    elif i % 3 == 0:
-        print ("Fizz")
-    elif i % 5 == 0:
-        print ("Buzz")
+    result = ""
+    for divisor in rules:
+        if i % divisor == 0:
+            result += rules [divisor]
+    if result == "":
+        print(i)
     else:
-        print (i)
+        print (result)
